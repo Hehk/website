@@ -13,7 +13,7 @@ const IndexPage = () => (
     <Block>
       <Comment>
         Kyle Henderson is a software developer from Cincinnati, currently at
-        Tata Consultancy Services
+        Try.com.
       </Comment>
     </Block>
     <Block>

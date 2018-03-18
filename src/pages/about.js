@@ -14,9 +14,8 @@ const AboutPage = () => (
       <Comment>
         Hello, my name is Kyle Henderson. I am a nerdy boy from Cincinnati with
         a passion for web development, running, and functional programming. I
-        currently work at TaTa Consultancy Services, with a focus developing
-        microservice systems, but in my spare time I am making things with React
-        or studying dutch.
+        currently work at Try.com, in San Francisco, as a software engineer using a lot of react
+        and graphql.
       </Comment>
     </Block>
 

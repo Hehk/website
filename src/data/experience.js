@@ -1,7 +1,11 @@
 const experience = [
   {
+    title: "Try.com",
+    message: "Mar 2018 - Present :: Software Engineer"
+  },
+  {
     title: "Tata Consultancy Services",
-    message: "June 2017 - present :: Software Engineer"
+    message: "June 2017 - Feb 2018 :: Software Engineer"
   },
   {
     title: "Westell Technologies",

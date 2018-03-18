@@ -1,8 +1,13 @@
 const projects = [
   {
-    title: "Kaos",
-    message: "A personal scheduling app mixed with some chaos",
-    link: "https://github.com/Hehk/kaos-web"
+    title: "reason-react-context",
+    message: "An implementation of the new react context API in ReasonML",
+    link: "https://github.com/Hehk/reason-react-context"
+  },
+  {
+    title: "30s of Reason",
+    message: "An attempt to recreate 30s of code but for ReasonML",
+    link: "https://github.com/Hehk/30s-of-reason"
   },
   {
     title: "This website",
