@@ -2,4 +2,4 @@
 // You can import this data from anywhere in your site by using the `import` keyword.
 
 export const SITE_TITLE = 'I No Read';
-export const SITE_DESCRIPTION = 'Welcome to I No Read';
+export const SITE_DESCRIPTION = 'striving for illiteracy';
