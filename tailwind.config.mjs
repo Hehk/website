@@ -5,7 +5,7 @@ export default {
     extend: {
       fontFamily: {
         serif: ['EB Garamond', 'Georgia', 'serif'],
-        mono: ['JetBrains Mono', 'monospace'],
+        mono: ['IBM Plex Mono', 'monospace'],
       },
       typography: {
         DEFAULT: {
