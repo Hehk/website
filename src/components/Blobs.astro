@@ -1,145 +1,154 @@
 <!-- Blob background -->
 <div class="blob-container">
-	<div class="blob blob-1"></div>
-	<div class="blob blob-2"></div>
-	<div class="blob blob-3"></div>
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
 </div>
 
 <style>
-	.blob-container {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		pointer-events: none;
-		z-index: 1;
-		filter: blur(80px);
-		opacity: 0.6;
-	}
+  .blob-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    filter: blur(80px);
+    opacity: 0.6;
+  }
 
-	.blob {
-		position: absolute;
-		border-radius: 50%;
-	}
+  .blob {
+    position: absolute;
+    border-radius: 50%;
+  }
 
-	.blob-1 {
-		width: 40vmin;
-		height: 40vmin;
-		background: oklch(0.75 0.15 55);
-		top: 50%;
-		left: 50%;
-		margin-top: -20vmin;
-		margin-left: -20vmin;
-		animation: orbit1 15s linear infinite, morph1 20s ease-in-out infinite;
-	}
+  .blob-1 {
+    width: 40vmin;
+    height: 40vmin;
+    background: oklch(0.75 0.15 55);
+    top: 50%;
+    left: 50%;
+    margin-top: -20vmin;
+    margin-left: -20vmin;
+    animation:
+      orbit1 15s linear infinite,
+      morph1 20s ease-in-out infinite;
+  }
 
-	.blob-2 {
-		width: 35vmin;
-		height: 35vmin;
-		background: oklch(0.72 0.12 145);
-		top: 50%;
-		left: 50%;
-		margin-top: -17.5vmin;
-		margin-left: -17.5vmin;
-		animation: orbit2 20s linear infinite reverse, morph2 25s ease-in-out infinite;
-	}
+  .blob-2 {
+    width: 35vmin;
+    height: 35vmin;
+    background: oklch(0.72 0.12 145);
+    top: 50%;
+    left: 50%;
+    margin-top: -17.5vmin;
+    margin-left: -17.5vmin;
+    animation:
+      orbit2 20s linear infinite reverse,
+      morph2 25s ease-in-out infinite;
+  }
 
-	.blob-3 {
-		width: 50vmin;
-		height: 50vmin;
-		background: oklch(0.68 0.14 320);
-		top: 50%;
-		left: 50%;
-		margin-top: -25vmin;
-		margin-left: -25vmin;
-		animation: orbit3 25s linear infinite, morph3 30s ease-in-out infinite;
-	}
+  .blob-3 {
+    width: 50vmin;
+    height: 50vmin;
+    background: oklch(0.68 0.14 320);
+    top: 50%;
+    left: 50%;
+    margin-top: -25vmin;
+    margin-left: -25vmin;
+    animation:
+      orbit3 25s linear infinite,
+      morph3 30s ease-in-out infinite;
+  }
 
-	@keyframes orbit1 {
-		0% { 
-			transform: rotate(0deg) translate(25vmin, 0) rotate(0deg);
-		}
-		25% { 
-			transform: rotate(90deg) translate(18vmin, 0) rotate(-90deg);
-		}
-		50% { 
-			transform: rotate(180deg) translate(25vmin, 0) rotate(-180deg);
-		}
-		75% { 
-			transform: rotate(270deg) translate(18vmin, 0) rotate(-270deg);
-		}
-		100% { 
-			transform: rotate(360deg) translate(25vmin, 0) rotate(-360deg);
-		}
-	}
+  @keyframes orbit1 {
+    0% {
+      transform: rotate(0deg) translate(25vmin, 0) rotate(0deg);
+    }
+    25% {
+      transform: rotate(90deg) translate(18vmin, 0) rotate(-90deg);
+    }
+    50% {
+      transform: rotate(180deg) translate(25vmin, 0) rotate(-180deg);
+    }
+    75% {
+      transform: rotate(270deg) translate(18vmin, 0) rotate(-270deg);
+    }
+    100% {
+      transform: rotate(360deg) translate(25vmin, 0) rotate(-360deg);
+    }
+  }
 
-	@keyframes orbit2 {
-		0% { 
-			transform: rotate(120deg) translate(32vmin, 0) rotate(-120deg);
-		}
-		25% { 
-			transform: rotate(210deg) translate(22vmin, 0) rotate(-210deg);
-		}
-		50% { 
-			transform: rotate(300deg) translate(32vmin, 0) rotate(-300deg);
-		}
-		75% { 
-			transform: rotate(390deg) translate(22vmin, 0) rotate(-390deg);
-		}
-		100% { 
-			transform: rotate(480deg) translate(32vmin, 0) rotate(-480deg);
-		}
-	}
+  @keyframes orbit2 {
+    0% {
+      transform: rotate(120deg) translate(32vmin, 0) rotate(-120deg);
+    }
+    25% {
+      transform: rotate(210deg) translate(22vmin, 0) rotate(-210deg);
+    }
+    50% {
+      transform: rotate(300deg) translate(32vmin, 0) rotate(-300deg);
+    }
+    75% {
+      transform: rotate(390deg) translate(22vmin, 0) rotate(-390deg);
+    }
+    100% {
+      transform: rotate(480deg) translate(32vmin, 0) rotate(-480deg);
+    }
+  }
 
-	@keyframes orbit3 {
-		0% { 
-			transform: rotate(240deg) translate(18vmin, 0) rotate(-240deg);
-		}
-		25% { 
-			transform: rotate(330deg) translate(28vmin, 0) rotate(-330deg);
-		}
-		50% { 
-			transform: rotate(420deg) translate(18vmin, 0) rotate(-420deg);
-		}
-		75% { 
-			transform: rotate(510deg) translate(28vmin, 0) rotate(-510deg);
-		}
-		100% { 
-			transform: rotate(600deg) translate(18vmin, 0) rotate(-600deg);
-		}
-	}
+  @keyframes orbit3 {
+    0% {
+      transform: rotate(240deg) translate(18vmin, 0) rotate(-240deg);
+    }
+    25% {
+      transform: rotate(330deg) translate(28vmin, 0) rotate(-330deg);
+    }
+    50% {
+      transform: rotate(420deg) translate(18vmin, 0) rotate(-420deg);
+    }
+    75% {
+      transform: rotate(510deg) translate(28vmin, 0) rotate(-510deg);
+    }
+    100% {
+      transform: rotate(600deg) translate(18vmin, 0) rotate(-600deg);
+    }
+  }
 
-	@keyframes morph1 {
-		0%, 100% { 
-			border-radius: 50% 40% 60% 50%;
-			scale: 1;
-		}
-		50% { 
-			border-radius: 40% 60% 50% 60%;
-			scale: 1.15;
-		}
-	}
+  @keyframes morph1 {
+    0%,
+    100% {
+      border-radius: 50% 40% 60% 50%;
+      scale: 1;
+    }
+    50% {
+      border-radius: 40% 60% 50% 60%;
+      scale: 1.15;
+    }
+  }
 
-	@keyframes morph2 {
-		0%, 100% { 
-			border-radius: 60% 40% 50% 60%;
-			scale: 1;
-		}
-		50% { 
-			border-radius: 40% 60% 60% 40%;
-			scale: 1.2;
-		}
-	}
+  @keyframes morph2 {
+    0%,
+    100% {
+      border-radius: 60% 40% 50% 60%;
+      scale: 1;
+    }
+    50% {
+      border-radius: 40% 60% 60% 40%;
+      scale: 1.2;
+    }
+  }
 
-	@keyframes morph3 {
-		0%, 100% { 
-			border-radius: 40% 60% 50% 50%;
-			scale: 1;
-		}
-		50% { 
-			border-radius: 60% 40% 60% 40%;
-			scale: 1.1;
-		}
-	}
+  @keyframes morph3 {
+    0%,
+    100% {
+      border-radius: 40% 60% 50% 50%;
+      scale: 1;
+    }
+    50% {
+      border-radius: 60% 40% 60% 40%;
+      scale: 1.1;
+    }
+  }
 </style>
