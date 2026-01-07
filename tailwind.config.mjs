@@ -5,19 +5,18 @@ export default {
     extend: {
       fontFamily: {
         serif: ['EB Garamond', 'Georgia', 'serif'],
-        display: ['Playfair Display', 'Georgia', 'serif'],
-        sans: ['Work Sans', 'system-ui', 'sans-serif'],
+        mono: ['JetBrains Mono', 'monospace'],
       },
       typography: {
         DEFAULT: {
           css: {
             fontFamily: 'EB Garamond, Georgia, serif',
-            h1: { fontFamily: 'Playfair Display, Georgia, serif' },
-            h2: { fontFamily: 'Playfair Display, Georgia, serif' },
-            h3: { fontFamily: 'Playfair Display, Georgia, serif' },
-            h4: { fontFamily: 'Playfair Display, Georgia, serif' },
-            h5: { fontFamily: 'Playfair Display, Georgia, serif' },
-            h6: { fontFamily: 'Playfair Display, Georgia, serif' },
+            h1: { fontFamily: 'EB Garamond, Georgia, serif' },
+            h2: { fontFamily: 'EB Garamond, Georgia, serif' },
+            h3: { fontFamily: 'EB Garamond, Georgia, serif' },
+            h4: { fontFamily: 'EB Garamond, Georgia, serif' },
+            h5: { fontFamily: 'EB Garamond, Georgia, serif' },
+            h6: { fontFamily: 'EB Garamond, Georgia, serif' },
           },
         },
       },

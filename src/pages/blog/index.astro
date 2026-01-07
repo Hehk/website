@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseHead from '../../components/BaseHead.astro';
+import Blobs from '../../components/Blobs.astro';
 import FormattedDate from '../../components/FormattedDate.astro';
 import Header from '../../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
@@ -15,21 +16,22 @@ const posts = (await getCollection('blog')).sort(
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
-	<body class="bg-white font-serif text-gray-900">
+	<body class="bg-stone-100 font-serif text-stone-800 min-h-screen relative">
+		<Blobs />
 		<Header />
-		<main class="max-w-3xl mx-auto px-4 py-12">
-			<h1 class="font-display text-4xl md:text-5xl font-bold text-black mb-12 text-center">Blog</h1>
+		<main class="max-w-3xl mx-auto px-4 py-12 relative z-10">
+			
 			<div class="space-y-8">
 				{
 					posts.map((post) => (
-						<article class="border-b border-gray-200 pb-8 last:border-b-0">
+						<article class="pb-8">
 							<a href={`/blog/${post.id}/`} class="block group">
-								<h2 class="font-display text-2xl md:text-3xl font-semibold text-black group-hover:text-gray-700 transition-colors duration-200 mb-2">
+								<h2 class="font-serif text-2xl md:text-3xl font-semibold text-stone-900 group-hover:text-stone-600 transition-colors duration-200 mb-2">
 									{post.data.title}
 								</h2>
 								<FormattedDate date={post.data.pubDate} />
 								{post.data.description && (
-									<p class="mt-3 text-gray-700 font-serif text-lg leading-relaxed">
+									<p class="mt-3 text-stone-700 font-serif text-lg leading-relaxed">
 										{post.data.description}
 									</p>
 								)}

@@ -1,5 +1,6 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
+import Blobs from '../components/Blobs.astro';
 import Header from '../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 ---
@@ -9,17 +10,26 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
-	<body class="bg-white font-serif text-gray-900">
+	<body class="bg-stone-100 font-serif text-stone-800 min-h-screen relative overflow-hidden">
+		<Blobs />
 		<Header />
-		<main class="max-w-3xl mx-auto px-4 py-12">
-			<div class="prose prose-lg max-w-none">
-				<p>
-What do such machines really do? They increase the number of things we can do without thinking. Things we do without thinking—there's the real danger.
+		<main class="min-h-[calc(100vh-60px)] flex items-center justify-center px-4">
+			<div class="max-w-2xl text-center">
+				<p class="text-xl md:text-2xl leading-relaxed mb-6">
+					What do such machines really do? They increase the number of things we can do without thinking. Things we do without thinking—there's the real danger.
 				</p>
-        <p class="font-sans">
-          Leto II
-        </p>
+				<p class="font-mono text-sm text-stone-600 uppercase tracking-wider">
+					Leto II
+				</p>
 			</div>
 		</main>
+
+		<style>
+			/* Ensure content stays above blobs */
+			header, main {
+				position: relative;
+				z-index: 2;
+			}
+		</style>
 	</body>
 </html>
