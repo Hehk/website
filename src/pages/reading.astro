@@ -1,0 +1,100 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Blobs from "../components/Blobs.astro";
+import Header from "../components/Header.astro";
+import { SITE_TITLE } from "../consts";
+import {
+  fetchShelf,
+  filterBooksReadInYear,
+  sortBooksByDateRead,
+} from "../lib/goodreads";
+
+const userId = "122760954";
+const currentlyReading = await fetchShelf(userId, "currently-reading");
+const allRead = await fetchShelf(userId, "read");
+const readIn2026 = sortBooksByDateRead(filterBooksReadInYear(allRead, 2026));
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={`Reading | ${SITE_TITLE}`} description="Books I'm reading and have read in 2026" />
+  </head>
+  <body class="bg-stone-100 font-serif text-stone-800 min-h-screen relative">
+    <Blobs />
+    <Header />
+    <main class="max-w-3xl mx-auto px-4 py-12 relative z-10">
+      {currentlyReading.length > 0 && (
+        <section class="mb-16">
+          <h2 class="font-serif text-2xl md:text-3xl font-semibold text-stone-900 mb-8">
+            Currently Reading
+          </h2>
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+            {currentlyReading.map((book) => (
+              <a
+                href={book.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div class="aspect-[2/3] mb-3 overflow-hidden rounded-sm shadow-md">
+                  {book.coverUrl ? (
+                    <img
+                      src={book.coverUrl}
+                      alt={book.title}
+                      class="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div class="w-full h-full bg-stone-300 flex items-center justify-center">
+                      <span class="text-stone-500 text-sm">No cover</span>
+                    </div>
+                  )}
+                </div>
+                <h3 class="font-mono text-sm font-medium text-stone-900 line-clamp-2">
+                  {book.title}
+                </h3>
+                <p class="font-mono text-xs text-stone-600 mt-1">{book.author}</p>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <section>
+        <h2 class="font-serif text-2xl md:text-3xl font-semibold text-stone-900 mb-8">
+          Read in 2026
+        </h2>
+        {readIn2026.length > 0 ? (
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+            {readIn2026.map((book) => (
+              <a
+                href={book.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div class="aspect-[2/3] mb-3 overflow-hidden rounded-sm shadow-md">
+                  {book.coverUrl ? (
+                    <img
+                      src={book.coverUrl}
+                      alt={book.title}
+                      class="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div class="w-full h-full bg-stone-300 flex items-center justify-center">
+                      <span class="text-stone-500 text-sm">No cover</span>
+                    </div>
+                  )}
+                </div>
+                <h3 class="font-mono text-sm font-medium text-stone-900 line-clamp-2">
+                  {book.title}
+                </h3>
+                <p class="font-mono text-xs text-stone-600 mt-1">{book.author}</p>
+              </a>
+            ))}
+          </div>
+        ) : (
+          <p class="text-stone-600">No books finished yet in 2026.</p>
+        )}
+      </section>
+    </main>
+  </body>
+</html>
